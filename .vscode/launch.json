@@ -1,0 +1,81 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+    ]
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 5 // Maximum size of the stack
+
+int stack[MAX];
+int top = -1; // Indicates the stack is empty
+
+// Function Prototypes
+void push(int val);
+void pop();
+void peek();
+void display();
+
+int main() {
+    // Example usage
+    push(10);
+    push(20);
+    push(30);
+    display();
+    
+    pop();
+    peek();
+    display();
+
+    return 0;
+}
+
+// Add an element to the top
+void push(int val) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow! Cannot push %d\n", val);
+    } else {
+        top++;
+        stack[top] = val;
+        printf("Pushed %d onto the stack.\n", val);
+    }
+}
+
+// Remove the top element
+void pop() {
+    if (top == -1) {
+        printf("Stack Underflow! Nothing to pop.\n");
+    } else {
+        printf("Popped %d from the stack.\n", stack[top]);
+        top--;
+    }
+}
+
+// Look at the top element without removing it
+void peek() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Top element is: %d\n", stack[top]);
+    }
+}
+
+// Print all elements in the stack
+void display() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Current Stack: ");
+        for (int i = top; i >= 0; i--) {
+            printf("%d ", stack[i]);
+        }
+        printf("\n");
+    }
+}

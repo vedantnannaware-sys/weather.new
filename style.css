@@ -1,0 +1,200 @@
+/* GLOBAL */
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+color:white;
+overflow:hidden;
+}
+
+/* VIDEO BACKGROUND */
+#weather-video{
+position:fixed;
+top:0;
+left:0;
+width:110%;
+height:110%;
+object-fit:cover;
+z-index:-2;
+transform:translate(-5%,-5%);
+transition:opacity 0.5s ease;
+}
+
+/* MAIN LAYOUT */
+.weather-display{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-between;
+padding-top:70px;
+padding-bottom:60px;
+}
+
+/* MAIN WEATHER (CENTERED PROPERLY) */
+.weather-overlay{
+text-align:center;
+z-index:2;
+}
+
+/* CITY */
+.weather-overlay h1{
+font-size:26px;
+margin-bottom:0;
+}
+
+/* TEMP */
+.temperature{
+font-size:42px;
+font-weight:200;
+}
+
+/* CONDITION */
+.condition{
+font-size:13px;
+margin-bottom:10px;
+}
+
+/* DETAILS */
+.details{
+display:flex;
+gap:30px;
+justify-content:center;
+margin-top:10px;
+}
+
+.detail{
+text-align:center;
+}
+
+.detail p{
+font-size:14px;
+opacity:0.6;
+}
+
+.detail span{
+font-size:22px;
+}
+
+/* CARDS CONTAINER (BOTTOM AREA) */
+.weather-cards{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+margin-top:auto; /* 🔥 pushes everything down */
+}
+
+/* ROWS */
+.row-top{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.row-bottom{
+display:flex;
+gap:20px;
+justify-content:center;
+align-items:flex-start;
+flex-wrap:wrap;
+}
+
+/* CARD STYLE */
+.weather-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+padding:15px 20px;
+border-radius:20px;
+color:white;
+}
+
+/* TITLES */
+.weather-card h3{
+font-size:14px;
+margin-bottom:10px;
+opacity:0.6;
+}
+
+/* HOURLY */
+.hourly-card{
+width:80%;
+max-width:900px;
+}
+
+.hourly{
+display:flex;
+gap:15px;
+overflow-x:auto;
+}
+
+.hour{
+text-align:center;
+min-width:90px;
+}
+
+.hour span{
+font-size:22px;
+}
+
+/* AQI */
+.air-quality{
+text-align:center;
+width:120px;
+height:120px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.air-quality h2{
+font-size:36px;
+margin:0;
+}
+
+/* SUN */
+.sun-card{
+width:140px;
+height:120px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+text-align:center;
+}
+
+/* MAP (ONLY BIG ELEMENT) */
+.map-card{
+width:260px;
+height:360px;
+display:flex;
+flex-direction:column;
+}
+
+.map-card iframe{
+flex:1;
+width:100%;
+border-radius:15px;
+}
+
+/* DAILY FORECAST */
+.daily-card{
+width:260px;
+padding:15px;
+}
+
+.daily-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:8px 0;
+font-size:14px;
+}
+
+.daily-row span{
+opacity:0.8;
+}
+
+/* REMOVE OLD BROKEN STYLES */
+.map-container{
+display:none;
+}
